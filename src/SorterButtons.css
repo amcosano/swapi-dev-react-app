@@ -1,0 +1,18 @@
+.sorter {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+}
+
+.sorter button {
+  display: flex;
+  background-color: rgb(178, 175, 168);
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  align-items: center;
+}
