@@ -1,64 +1,63 @@
-// import logo from './logo.svg';
-import { useState, useEffect } from "react";
-import "./App.css";
-import Pagination from "./Pagination";
-import Modal from "./Modal";
-import Header from "./Header";
-import Footer from "./Footer";
-import Characters from "./Characters";
-import Spinner from "./Spinner";
-import SorterButtons from "./SorterButtons";
+import { useState, useEffect } from 'react'
+import './App.css'
+import Pagination from './Pagination'
+import Modal from './Modal'
+import Header from './Header'
+import Footer from './Footer'
+import Characters from './Characters'
+import Spinner from './Spinner'
+import SorterButtons from './SorterButtons'
 
-const apiURL = "https://swapi.dev/api/people/";
+const apiURL = 'https://swapi.dev/api/people/'
 
 function App() {
-  const [characters, setCharacters] = useState([]);
-  const [currentPageUrl, setCurrentPageUrl] = useState(apiURL);
-  const [nextPageUrl, setNextPageUrl] = useState();
-  const [prevPageUrl, setPrevPageUrl] = useState();
-  const [loading, setLoading] = useState(true);
-  const [modal, setModal] = useState(false);
-  const [modalData, setModalData] = useState();
+  const [characters, setCharacters] = useState([])
+  const [currentPageUrl, setCurrentPageUrl] = useState(apiURL)
+  const [nextPageUrl, setNextPageUrl] = useState()
+  const [prevPageUrl, setPrevPageUrl] = useState()
+  const [loading, setLoading] = useState(true)
+  const [modal, setModal] = useState(false)
+  const [modalData, setModalData] = useState()
 
   useEffect(() => {
-    setLoading(true);
+    setLoading(true)
     fetch(currentPageUrl)
       .then((res) => res.json())
       .then((data) => {
-        setNextPageUrl(data.next);
-        setPrevPageUrl(data.previous);
-        setCharacters(data.results);
-        setLoading(false);
-      });
-  }, [currentPageUrl]);
+        setNextPageUrl(data.next)
+        setPrevPageUrl(data.previous)
+        setCharacters(data.results)
+        setLoading(false)
+      })
+  }, [currentPageUrl])
 
   const nextPage = () => {
-    setCurrentPageUrl(nextPageUrl);
-  };
+    setCurrentPageUrl(nextPageUrl)
+  }
 
   const prevPage = () => {
-    setCurrentPageUrl(prevPageUrl);
-  };
+    setCurrentPageUrl(prevPageUrl)
+  }
 
   const sortByName = () => {
     const filtered = [].concat(
       characters.sort((a, b) => a.name.localeCompare(b.name))
-    );
-    setCharacters(filtered);
-  };
+    )
+    setCharacters(filtered)
+  }
 
   const sortByHeight = () => {
     const heightToNumber = characters.map((character) => ({
       ...character,
       height: Number(character.height),
-    }));
-    console.log("Number", heightToNumber);
+    }))
+    console.log('Number', heightToNumber)
     const filtered = [].concat(
       heightToNumber.sort((a, b) => a.height - b.height)
-    );
-    console.log("filtered", filtered);
-    setCharacters(filtered);
-  };
+    )
+    console.log('filtered', filtered)
+    setCharacters(filtered)
+  }
 
   const getData = (name, height, hairColor, gender) => {
     setModalData({
@@ -66,20 +65,20 @@ function App() {
       height: height,
       hairColor: hairColor,
       gender: gender,
-    });
-    setModal(true);
-  };
+    })
+    setModal(true)
+  }
 
   return (
     <>
-      <Header title={"Star Wars"} />
+      <Header title={'Star Wars'} />
 
       <Pagination
         nextPage={nextPageUrl ? nextPage : null}
         prevPage={prevPageUrl ? prevPage : null}
       />
       <SorterButtons sortByName={sortByName} sortByHeight={sortByHeight} />
-      <div className="App-content">
+      <div className='App-content'>
         {loading ? (
           <Spinner />
         ) : (
@@ -97,7 +96,7 @@ function App() {
             closeModal={() => setModal(false)}
           />
         ) : (
-          ""
+          ''
         )}
       </div>
       <Pagination
@@ -107,7 +106,7 @@ function App() {
 
       <Footer />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

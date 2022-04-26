@@ -1,12 +1,12 @@
-import React from "react";
-import "./Character.css";
+import React from 'react'
+import './Character.css'
 
 export default function Characters({ characters = [], getData }) {
   return (
-    <div class="card-flex">
+    <div className='card-flex'>
       {characters.map((c, index) => (
-        <div class="card" key={index}>
-          <div class="container">
+        <div className='card' key={index}>
+          <div className='container'>
             <p>CHARACTER</p>
             <h4>
               <b>{c.name}</b>
@@ -21,5 +21,5 @@ export default function Characters({ characters = [], getData }) {
         </div>
       ))}
     </div>
-  );
+  )
 }
