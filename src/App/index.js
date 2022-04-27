@@ -56,7 +56,7 @@ function App() {
     setCharacters(filtered)
   }
 
-  const getData = (name, height, hairColor, gender) => {
+  const getModalData = (name, height, hairColor, gender) => {
     setModalData({
       name: name,
       height: height,
@@ -86,7 +86,7 @@ function App() {
           {loading ? (
             <Spinner />
           ) : (
-            <Characters characters={characters} getData={getData} />
+            <Characters characters={characters} getModalData={getModalData} />
           )}
         </div>
         <div className='App-main-modal'>

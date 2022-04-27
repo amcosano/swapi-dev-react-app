@@ -1,7 +1,7 @@
 import React from 'react'
 import './Character.css'
 
-export default function Characters({ characters = [], getData }) {
+export default function Characters({ characters = [], getModalData }) {
   return (
     <div className='card-flex'>
       {characters.map((c, index) => (
@@ -14,7 +14,7 @@ export default function Characters({ characters = [], getData }) {
             <div>
               <button
                 onClick={() =>
-                  getData(c.name, c.height, c.hair_color, c.gender)
+                  getModalData(c.name, c.height, c.hair_color, c.gender)
                 }
               >
                 More info
