@@ -14,7 +14,12 @@ export default function Characters({ characters = [], getModalData }) {
             <div>
               <button
                 onClick={() =>
-                  getModalData(c.name, c.height, c.hair_color, c.gender)
+                  getModalData(
+                    c.name.toUpperCase(),
+                    c.height,
+                    c.hair_color.toUpperCase(),
+                    c.gender.toUpperCase()
+                  )
                 }
               >
                 More info

@@ -1,6 +1,6 @@
 export const INVALID_VALUE = {
-  NA: 'n/a',
+  NA: 'N/A',
   Unknown: 'unknown',
-  None: 'none',
+  None: 'NONE',
   Zero: 0,
 }
