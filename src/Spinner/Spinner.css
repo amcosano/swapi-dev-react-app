@@ -3,6 +3,18 @@
   justify-content: center;
 }
 
+.spinner-message {
+  text-align: center;
+  font-weight: 900;
+  width: 180px;
+  font-size: 37px;
+  color: rgb(255, 255, 255);
+}
+
+.spinner-span {
+  color: rgb(219, 176, 82);
+}
+
 .spinner {
   position: absolute;
   top: 50%;
