@@ -5,6 +5,8 @@ import Header from '../Header'
 import Characters from '../Characters'
 import Spinner from '../Spinner'
 import SorterButtons from '../SorterButtons'
+import ScrollButton from '../ScrollButton'
+import { API_PAGES_LIMIT } from './constants'
 import { getCharacters } from '../services/getCharacters'
 
 function App() {
@@ -15,10 +17,12 @@ function App() {
 
   useEffect(() => {
     setLoading(true)
-    getCharacters(1, 9).then((finalArr) => {
-      setCharacters(finalArr)
-      setLoading(false)
-    })
+    getCharacters(API_PAGES_LIMIT.StartPage, API_PAGES_LIMIT.EndPage).then(
+      (finalArr) => {
+        setCharacters(finalArr)
+        setLoading(false)
+      }
+    )
   }, [])
 
   const sortByName = () => {
@@ -66,6 +70,9 @@ function App() {
           ) : (
             <Characters characters={characters} getModalData={getModalData} />
           )}
+          <div>
+            <ScrollButton />
+          </div>
         </div>
         <div className='App-main-modal'>
           {modal ? (
