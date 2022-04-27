@@ -1,11 +1,6 @@
 import React from 'react'
 import './Modal.css'
-
-const INVALID_VALUE = {
-  NA: 'n/a',
-  Unknown: 'unknown',
-  None: 'none',
-}
+import { INVALID_VALUE } from './constants'
 
 export default function Modal({ name, height, hairColor, gender, closeModal }) {
   return (
