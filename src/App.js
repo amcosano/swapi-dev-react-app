@@ -3,7 +3,6 @@ import './App.css'
 import Pagination from './Pagination'
 import Modal from './Modal'
 import Header from './Header'
-import Footer from './Footer'
 import Characters from './Characters'
 import Spinner from './Spinner'
 import SorterButtons from './SorterButtons'
@@ -13,7 +12,7 @@ const apiURL = 'https://swapi.dev/api/people/'
 function App() {
   const [characters, setCharacters] = useState([])
   const [currentPageUrl, setCurrentPageUrl] = useState(apiURL)
-  const [nextPageUrl, setNextPageUrl] = useState()
+  const [nextPageUrl, setNextPageUrl] = useState(true)
   const [prevPageUrl, setPrevPageUrl] = useState()
   const [loading, setLoading] = useState(true)
   const [modal, setModal] = useState(false)
@@ -71,40 +70,46 @@ function App() {
 
   return (
     <>
-      <Header title={'Star Wars'} />
+      <Header title={'SwapiWars'} />
 
       <Pagination
         nextPage={nextPageUrl ? nextPage : null}
         prevPage={prevPageUrl ? prevPage : null}
       />
-      <SorterButtons sortByName={sortByName} sortByHeight={sortByHeight} />
-      <div className='App-content'>
-        {loading ? (
-          <Spinner />
-        ) : (
-          <Characters characters={characters} getData={getData} />
-        )}
 
-        {/* <Characters characters={characters} getData={getData} /> */}
-
-        {modal ? (
-          <Modal
-            name={modalData.name}
-            height={modalData.height}
-            hairColor={modalData.hairColor}
-            gender={modalData.gender}
-            closeModal={() => setModal(false)}
-          />
-        ) : (
-          ''
-        )}
+      <div className='App-main'>
+        <div className='App-main-cards'>
+          <div>
+            <SorterButtons
+              sortByName={sortByName}
+              sortByHeight={sortByHeight}
+            />
+          </div>
+          {loading ? (
+            <Spinner />
+          ) : (
+            <Characters characters={characters} getData={getData} />
+          )}
+        </div>
+        <div className='App-main-modal'>
+          {modal ? (
+            <Modal
+              name={modalData.name}
+              height={modalData.height}
+              hairColor={modalData.hairColor}
+              gender={modalData.gender}
+              closeModal={() => setModal(false)}
+            />
+          ) : (
+            ''
+          )}
+        </div>
       </div>
+
       <Pagination
         nextPage={nextPageUrl ? nextPage : null}
         prevPage={prevPageUrl ? prevPage : null}
       />
-
-      <Footer />
     </>
   )
 }

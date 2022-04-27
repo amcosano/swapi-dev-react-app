@@ -3,8 +3,10 @@ import './Header.css'
 
 export default function Header({ title }) {
   return (
-    <div className='header'>
-      <h1>{title}</h1>
-    </div>
+    <header className='header-container'>
+      <div className='page-logo'>
+        <a href='/'>{title}</a>
+      </div>
+    </header>
   )
 }

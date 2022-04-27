@@ -1,18 +1,23 @@
-.sorter {
+.sorter-container {
   display: flex;
+  margin: 0px auto;
+  padding: 10px 0px;
   justify-content: center;
-  height: 40px;
+  flex-wrap: wrap;
 }
 
-.sorter button {
-  display: flex;
-  background-color: rgb(178, 175, 168);
+.sorter-container button {
+  background-color: rgb(1, 108, 249);
+  color: rgb(255, 255, 255);
   border: none;
-  color: rgb(0, 0, 0);
   padding: 10px;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 15px;
+  margin: 5px 5px;
   cursor: pointer;
-  border-radius: 8px;
-  align-items: center;
+  border-radius: 4px;
+  width: 130px;
+}
+
+.sorter-container button:hover {
+  background-color: rgb(21, 119, 249);
 }

@@ -11,12 +11,15 @@ export default function Characters({ characters = [], getData }) {
             <h4>
               <b>{c.name}</b>
             </h4>
-            <hr />
-            <button
-              onClick={() => getData(c.name, c.height, c.hair_color, c.gender)}
-            >
-              More info
-            </button>
+            <div>
+              <button
+                onClick={() =>
+                  getData(c.name, c.height, c.hair_color, c.gender)
+                }
+              >
+                More info
+              </button>
+            </div>
           </div>
         </div>
       ))}

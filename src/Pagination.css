@@ -1,20 +1,22 @@
-.pagination {
+.pagination-container {
   display: flex;
+  background-color: rgb(24, 27, 42);
+  padding: 10px 0px;
   justify-content: center;
-  height: 40px;
-  background-color: #282c34;
-  padding: 5px;
 }
 
-.pagination button {
-  display: flex;
-  background-color: rgb(178, 175, 168);
-  border: none;
+.pagination-container button {
+  background-color: rgb(219, 176, 82);
   color: rgb(0, 0, 0);
+  border: none;
   padding: 10px;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 15px;
+  margin: 5px 5px;
   cursor: pointer;
-  border-radius: 8px;
-  align-items: center;
+  border-radius: 4px;
+  width: 130px;
+}
+
+.pagination-container button:hover {
+  background-color: rgb(226, 182, 85);
 }

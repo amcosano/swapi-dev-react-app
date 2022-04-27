@@ -1,9 +1,9 @@
-.App-content {
-  background-color: #282c34;
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App-main {
+  min-height: 705px;
+}
+
+.App-main-cards {
+  min-height: 705px;
+  margin: 0px auto;
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(24, 27, 42));
 }

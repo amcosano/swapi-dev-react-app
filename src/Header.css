@@ -1,7 +1,12 @@
-.header {
-  display: flex;
-  justify-content: center;
-  background-color: #555;
-  height: 100%;
-  align-items: center;
+.header-container {
+  background: linear-gradient(to right, rgb(0, 0, 0), rgb(24, 27, 42));
+  padding: 10px;
+}
+
+.page-logo a {
+  padding: 10px 80px;
+  color: rgb(255, 255, 255);
+  font-size: 45px;
+  text-decoration: none;
+  font-weight: 700;
 }
