@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Star Wars App usin Swapi
+
+Live example -> https://swapi-dev-react-app.netlify.app/
+
+Web App using the Swapi API in React
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
