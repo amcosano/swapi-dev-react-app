@@ -6,8 +6,8 @@ import Header from './Header'
 import Characters from './Characters'
 import Spinner from './Spinner'
 import SorterButtons from './SorterButtons'
-
-const apiURL = 'https://swapi.dev/api/people/'
+import { apiURL } from './services/getCharacters'
+import getCharacters from './services/getCharacters'
 
 function App() {
   const [characters, setCharacters] = useState([])
@@ -20,14 +20,12 @@ function App() {
 
   useEffect(() => {
     setLoading(true)
-    fetch(currentPageUrl)
-      .then((res) => res.json())
-      .then((data) => {
-        setNextPageUrl(data.next)
-        setPrevPageUrl(data.previous)
-        setCharacters(data.results)
-        setLoading(false)
-      })
+    getCharacters(currentPageUrl).then((data) => {
+      setNextPageUrl(data.next)
+      setPrevPageUrl(data.previous)
+      setCharacters(data.results)
+      setLoading(false)
+    })
   }, [currentPageUrl])
 
   const nextPage = () => {
