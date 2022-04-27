@@ -1,7 +1,7 @@
 .sorter-container {
   display: flex;
   margin: 0px auto;
-  padding: 10px 0px;
+  padding: 15px 0px;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -12,7 +12,7 @@
   border: none;
   padding: 10px;
   font-size: 15px;
-  margin: 5px 5px;
+  margin: 10px 20px;
   cursor: pointer;
   border-radius: 4px;
   width: 130px;
