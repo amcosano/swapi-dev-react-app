@@ -1,9 +1,18 @@
-export const apiURL = 'https://swapi.dev/api/people/'
+const apiURL = 'https://swapi.dev/api/people/?page='
 
-export default function getCharacters(currentPageUrl) {
-  return fetch(currentPageUrl)
-    .then((res) => res.json())
-    .then((data) => {
-      return data
-    })
+async function getPage(page) {
+  let response = await fetch(`${apiURL}${page}`)
+  let data = await response.json()
+  return data
+}
+
+export async function getCharacters(startPage, endPage) {
+  let currentPage = startPage
+  let finalArr = []
+  while (currentPage <= endPage) {
+    const pageData = await getPage(currentPage)
+    finalArr.push(...pageData.results)
+    currentPage++
+  }
+  return finalArr
 }
