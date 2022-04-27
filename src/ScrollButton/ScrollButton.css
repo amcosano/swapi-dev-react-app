@@ -1,0 +1,23 @@
+.scroll-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px 60px 0px;
+}
+
+.scroll-button {
+  background-color: rgb(219, 176, 82);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  margin: 5px 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 200px;
+  font-weight: 900;
+  display: inline-block;
+}
+
+.scroll-button:hover {
+  background-color: rgb(227, 199, 138);
+}
