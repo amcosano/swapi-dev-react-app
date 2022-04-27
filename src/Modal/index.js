@@ -19,6 +19,7 @@ export default function Modal({ name, height, hairColor, gender, closeModal }) {
             INVALID_VALUE.NA,
             INVALID_VALUE.Unknown,
             INVALID_VALUE.None,
+            INVALID_VALUE.Zero,
           ].includes(height) ? (
             ''
           ) : (
