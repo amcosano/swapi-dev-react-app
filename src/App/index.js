@@ -48,11 +48,9 @@ function App() {
       ...character,
       height: Number(character.height),
     }))
-    console.log('Number', heightToNumber)
     const filtered = [].concat(
       heightToNumber.sort((a, b) => a.height - b.height)
     )
-    console.log('filtered', filtered)
     setCharacters(filtered)
   }
 
